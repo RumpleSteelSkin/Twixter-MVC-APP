@@ -5,5 +5,12 @@
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
     </PropertyGroup>
+    <ItemGroup>
+        <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="12.0.0" />
+        <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="8.0.13" />
+    </ItemGroup>
+    <ItemGroup>
+      <ProjectReference Include="..\Twixter.Models\Twixter.Models.csproj" />
+    </ItemGroup>
 
 </Project>

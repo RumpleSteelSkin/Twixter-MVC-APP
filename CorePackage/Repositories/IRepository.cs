@@ -1,6 +1,5 @@
 ﻿using System.Linq.Expressions;
 using CorePackage.Entities;
-
 namespace CorePackage.Repositories;
 
 // ReSharper disable once TypeParameterCanBeVariant

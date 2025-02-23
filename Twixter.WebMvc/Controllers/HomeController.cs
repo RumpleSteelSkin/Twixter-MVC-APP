@@ -15,7 +15,7 @@ public class HomeController(IPostService postService, IMapper mapper, IUserServi
     public async Task<IActionResult> Index()
     {
         List<PostResponseDto> posts = await postService.GetAllAsync();
-
+        posts.Reverse();
         var model = new PostViewModel()
         {
             Posts = posts,

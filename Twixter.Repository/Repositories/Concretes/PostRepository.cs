@@ -1,7 +1,7 @@
 ﻿using CorePackage.Repositories;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Caching.Memory;
 using Microsoft.Extensions.Logging;
-using Twixter.Models.Dtos.Posts;
 using Twixter.Models.Entities;
 using Twixter.Repository.Context;
 using Twixter.Repository.Repositories.Abstracts;
@@ -15,7 +15,4 @@ public sealed class PostRepository(
     bool useCaching = false,
     bool useSoftDelete = false)
     : EfRepositoryBase<Post, Guid, ApplicationDbContext>(context, logger, cache, useCaching, useSoftDelete),
-        IPostRepository
-{
-    // public List<PostResponseDto> ResponseDtos
-}
+        IPostRepository { }

@@ -9,5 +9,5 @@ public class PostResponseDto
     public string? MediaUrl { get; set; }
     public ICollection<Media> MediaFiles { get; set; } = new List<Media>();
     public Guid UserId { get; set; }
-    public string UserName { get; set; }
+    public ApplicationUser User { get; set; }
 }

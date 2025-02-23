@@ -1,19 +1,77 @@
-﻿@model PostViewModel
+﻿@* @model PostViewModel *@
+@* *@
+@* <div class="col-md-6 border-start border-end"> *@
+@*     <form asp-action="Index" asp-controller="Home" method="post"> *@
+@*         <div class="tweet-box"> *@
+@*             <textarea asp-for="NewPost.Content" class="form-control" placeholder="What's going on" rows="3"></textarea> *@
+@*             <button type="submit" class="btn btn-primary mt-2">Twixle</button> *@
+@*         </div> *@
+@*     </form> *@
+@*     @foreach (PostResponseDto item in @Model.Posts) *@
+@*     { *@
+@*         <div class="tweet-box"> *@
+@*             @if (@item.User.ProfilePictureUrl is not null) *@
+@*             { *@
+@*                 <img src="@item.User.ProfilePictureUrl" alt="Profile Picture"/> *@
+@*             } *@
+@*             else *@
+@*             { *@
+@*                 <img src="images/nonprofilepictures/blank_profile.webp" alt="Non Profile Picture"/> *@
+@*             } *@
+@*             <strong>@item.User.UserName</strong> *@
+@*             <p>@item.Content</p> *@
+@*             <p>@item.CreatedDate</p> *@
+@*         </div> *@
+@*     } *@
+@* *@
+@* </div> *@
+
+@model PostViewModel
 
 <div class="col-md-6 border-start border-end">
-    <form asp-action="Index" asp-controller="Home" method="post">
-        <div class="tweet-box">
-            <textarea asp-for="NewPost.Content" class="form-control" placeholder="What's going on" rows="3"></textarea>
-            <button type="submit" class="btn btn-primary mt-2">Twixle</button>
-        </div>
-    </form>
-    @foreach (PostResponseDto item in @Model.Posts)
+    <!-- Yeni Gönderi Paylaşma Alanı -->
+    <div class="p-3 border-bottom">
+        <form asp-action="Index" asp-controller="Home" method="post">
+            <div class="d-flex">
+                <img src="images/nonprofilepictures/blank_profile.webp" class="rounded-circle me-3" width="50" height="50" alt="Profile Picture">
+                <div class="flex-grow-1">
+                    <textarea asp-for="NewPost.Content" class="form-control border-0" placeholder="What's going on?" rows="3"></textarea>
+                </div>
+            </div>
+            <div class="d-flex justify-content-between align-items-center mt-2">
+                <button type="submit" class="btn btn-primary rounded-pill px-4">Twixle</button>
+            </div>
+        </form>
+    </div>
+
+    <!-- Gönderiler -->
+    @foreach (PostResponseDto item in Model.Posts)
     {
-        <div class="tweet-box">
-            <strong>@item.UserName</strong>
-            <p>@item.Content</p>
-            <p>@item.CreatedDate</p>
+        <div class="card border-0 border-bottom p-3">
+            <div class="d-flex">
+                <!-- Profil Fotoğrafı -->
+                <img src="@(item.User.ProfilePictureUrl ?? "images/nonprofilepictures/blank_profile.webp")" 
+                     class="rounded-circle me-3" width="50" height="50" alt="Profile Picture">
+                
+                <div class="flex-grow-1">
+                    <div class="d-flex justify-content-between">
+                        <div>
+                            <strong>@item.User.UserName</strong> 
+                            <span class="text-muted">@item.CreatedDate.ToString("MMM dd, yyyy HH:mm")</span>
+                        </div>
+                    </div>
+                    
+                    <p class="mt-2 mb-1">@item.Content</p>
+                    
+                    <!-- Etkileşim Butonları -->
+                    <div class="d-flex justify-content-between text-muted">
+                        <button class="btn btn-sm text-secondary"><i class="bi bi-chat"></i> Comment</button>
+                        <button class="btn btn-sm text-secondary"><i class="bi bi-arrow-repeat"></i> Retwix</button>
+                        <button class="btn btn-sm text-secondary"><i class="bi bi-heart"></i> Like</button>
+                        <button class="btn btn-sm text-secondary"><i class="bi bi-share"></i> Share</button>
+                    </div>
+                </div>
+            </div>
         </div>
     }
-
 </div>

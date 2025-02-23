@@ -16,6 +16,7 @@
 
     <ItemGroup>
       <ProjectReference Include="..\Twixter.Repository\Twixter.Repository.csproj" />
+      <ProjectReference Include="..\Twixter.Service\Twixter.Service.csproj" />
     </ItemGroup>
 
 </Project>

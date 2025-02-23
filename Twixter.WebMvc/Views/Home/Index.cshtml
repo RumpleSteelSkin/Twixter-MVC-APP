@@ -1,8 +1,19 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
-}
+﻿@model PostViewModel
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<div class="col-md-6 border-start border-end">
+    <form asp-action="Index" asp-controller="Home" method="post">
+        <div class="tweet-box">
+            <textarea asp-for="NewPost.Content" class="form-control" placeholder="What's going on" rows="3"></textarea>
+            <button type="submit" class="btn btn-primary mt-2">Twixle</button>
+        </div>
+    </form>
+    @foreach (PostResponseDto item in @Model.Posts)
+    {
+        <div class="tweet-box">
+            <strong>@item.UserName</strong>
+            <p>@item.Content</p>
+            <p>@item.CreatedDate</p>
+        </div>
+    }
+
 </div>

@@ -11,6 +11,10 @@
     </ItemGroup>
     <ItemGroup>
       <ProjectReference Include="..\Twixter.Models\Twixter.Models.csproj" />
+      <ProjectReference Include="..\Twixter.Repository\Twixter.Repository.csproj" />
+    </ItemGroup>
+    <ItemGroup>
+      <Folder Include="Services\" />
     </ItemGroup>
 
 </Project>

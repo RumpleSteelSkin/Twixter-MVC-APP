@@ -38,7 +38,6 @@ public static class ServiceRegistration
         //AutoMapper IoC
         services.AddAutoMapper(typeof(MappingProfile));
         
-        
         return services;
     }
 }

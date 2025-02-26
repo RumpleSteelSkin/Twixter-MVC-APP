@@ -1,33 +1,5 @@
-﻿@* @model PostViewModel *@
-@* *@
-@* <div class="col-md-6 border-start border-end"> *@
-@*     <form asp-action="Index" asp-controller="Home" method="post"> *@
-@*         <div class="tweet-box"> *@
-@*             <textarea asp-for="NewPost.Content" class="form-control" placeholder="What's going on" rows="3"></textarea> *@
-@*             <button type="submit" class="btn btn-primary mt-2">Twixle</button> *@
-@*         </div> *@
-@*     </form> *@
-@*     @foreach (PostResponseDto item in @Model.Posts) *@
-@*     { *@
-@*         <div class="tweet-box"> *@
-@*             @if (@item.User.ProfilePictureUrl is not null) *@
-@*             { *@
-@*                 <img src="@item.User.ProfilePictureUrl" alt="Profile Picture"/> *@
-@*             } *@
-@*             else *@
-@*             { *@
-@*                 <img src="images/nonprofilepictures/blank_profile.webp" alt="Non Profile Picture"/> *@
-@*             } *@
-@*             <strong>@item.User.UserName</strong> *@
-@*             <p>@item.Content</p> *@
-@*             <p>@item.CreatedDate</p> *@
-@*         </div> *@
-@*     } *@
-@* *@
-@* </div> *@
-
-@model PostViewModel
-
+﻿@model PostViewModel
+<h1>Normal Kullanım</h1><hr/>
 <div class="col-md-6 border-start border-end">
     <!-- Yeni Gönderi Paylaşma Alanı -->
     <div class="p-3 border-bottom">

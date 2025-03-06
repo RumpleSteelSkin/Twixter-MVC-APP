@@ -4,6 +4,7 @@ namespace Twixter.Models.Dtos.Posts;
 
 public class PostResponseDto
 {
+    public required Guid Id { get; set; }
     public DateTime CreatedDate { get; set; }
     public string Content { get; set; } = string.Empty;
     public string? MediaUrl { get; set; }
